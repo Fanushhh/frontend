@@ -1,0 +1,49 @@
+@import '../../../../backend/public/static/scss/variables';
+.exercise{
+    max-width: 700px;
+    padding: 2rem;
+    margin:2rem;
+    background-color: $background-color-2;
+    color:white;
+    .exerciseName{
+        border-bottom: 1px solid rgba($neutral-blue, 0.4);
+        width: fit-content;
+        padding-bottom: .5rem;
+    }
+    
+}
+
+.btn{
+    background-color: darkgrey;
+    color:white;
+    padding:.5rem 1rem;
+    margin:2rem 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50px;
+}
+
+.default{
+    color:black;
+    width: 150px;
+    text-align: center;
+    padding: .3rem 0;
+    border-radius: .3rem;
+}
+.exerciseMedium{
+    background-color:rgb(57, 136, 255);
+}
+.exerciseEasy{
+    color:rgb(27, 172, 87);
+}
+.exerciseIntermediate{
+    color:black;
+
+}
+.btn:hover{
+    color:black;
+}
+
+

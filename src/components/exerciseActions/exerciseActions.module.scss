@@ -1,0 +1,31 @@
+@import '../../../../backend/public/static/scss/variables';
+section{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    .actionButtons{
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        button{
+            background-color: transparent;
+            color:white;
+            font-size: 1rem;
+            font-family: $font-family;
+            cursor: pointer;
+        }
+
+        button:hover{
+            color:$neutral-blue;
+        }
+    }
+    
+
+    
+}
+:global .MuiDialog-paper{
+    height: 550px;
+    background-color: $primary-blue;
+}
+
+

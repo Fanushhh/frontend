@@ -1,0 +1,119 @@
+@import '../../../../backend/public/static/scss/variables';
+
+
+.sections-container{
+    text-align: left;
+}
+
+.exercise{
+    background-color: $neutral-light-grey;
+    color: #000;
+    width: 270px;
+    height: 50px;
+    max-width: 100%;
+    padding: 0.7rem 1rem;
+    margin: 0.5em 2em 0.5em 0;
+    border-radius: 5px;
+    position: relative;
+    font-size: 0.9rem;
+    font-weight: $font-regular;
+    box-shadow: 0 5px 5px rgba(black, 0.2);
+    display: flex;
+    align-items: center;
+    
+    .exerciseTitle {
+        text-transform: capitalize;
+        color:black;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .exerciseDifficulty{
+            font-size: 0.7rem;
+            padding-right: 3em;
+        }
+    }
+    .exerciseTitle:hover{
+        color: rgba(gray,0.8);
+    }
+    
+    .buttonsContainer {
+        position: absolute;
+        height: 100%;
+        right: 30px;
+        top: 0;
+        display: flex;
+    }
+
+    .buttonsContainer .buttonWrapper {
+        position: relative;
+    }
+
+    .buttonsContainer .buttonWrapper span {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        left: 0;
+        top: 110%;
+        color: #000;
+        background-color: #000;
+        color:#fff;
+        border-radius: 3px;
+        text-align: center;
+        width: 80px;
+        font-size:12px;
+        padding: .4rem;
+        z-index: 2;
+    }
+
+    .buttonsContainer .buttonWrapper .deleteTooltip {
+        left: 30px;
+    }
+
+    .editButton {
+        position: absolute;
+        width: 50px;
+        height: 100%;
+        border-radius: 0 5px 5px 0;
+        background-color: $primary-blue;
+        color:#fff;
+        cursor: pointer;
+        border: 0;
+        z-index: 1;
+    }
+
+    .deleteButton {
+        border: none;
+        position: absolute;
+        border-radius: 0 5px 5px 0;
+        width: 50px;
+        height: 100%;
+        background-color: #315663;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        left: 8px;
+    }
+
+    .editButton:hover,
+    .deleteButton:hover {
+        & ~ span {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .editButton:hover {
+        color:#fff;
+
+    }
+
+    .deleteButton:hover {
+        transform: translateX(30px);
+        color: #fff;
+    }
+
+    
+    
+}
+

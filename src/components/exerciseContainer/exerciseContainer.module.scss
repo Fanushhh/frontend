@@ -1,0 +1,61 @@
+@import '../../../../backend/public/static/scss/responsiveness';
+@import '../../../../backend/public/static/scss/variables';
+
+.exerciseWrapper{
+    margin: 0 auto;
+    max-width: 110rem;
+    overflow: visible;
+    .exerciseActions{
+        display: flex;
+        padding: 2rem 0;
+        justify-content: center;
+        align-items: center;
+        gap:2rem;
+        
+        button{
+            border: none;
+            padding:0.5rem 2rem;
+            background-color: transparent;
+            color:white;
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            gap:.5rem;
+            align-items: center;
+        }
+        button:hover{
+            background-color: $primary-blue;
+        }
+        @include for-mobile-down{
+            gap:0.5rem;
+            font-size: 0.8rem;
+            button{
+                padding: .5rem 1rem;
+            }
+        }
+    }
+}
+
+
+
+.exerciseListContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    margin-top: 5rem;
+    
+    h1{
+        font-size: 1.3rem;
+    }
+
+    @include for-tablet-down{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include for-mobile-down{
+        grid-template-columns: 1fr;
+        
+    }
+}
