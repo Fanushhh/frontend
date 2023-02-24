@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 import styles from "./forgot-password.module.css";
 import authenticationImage from "../../images/authentication-image.svg";
 import Navbar from "../../components/navbar/navbar";
-
+import {Link} from 'react-router-dom';
 export default function ForgotPassword() {
   return (
     <div>
@@ -20,10 +20,10 @@ export default function ForgotPassword() {
           <button>Send reset link.</button>
           <div className={styles.links}>
             <p>
-              Go to <a href="/login">login.</a>
+              Go to <Link to="/login">login.</Link>
             </p>
             <p>
-              Create a new <a href="/register">account.</a>
+              Create a new <Link to="/register">account.</Link>
             </p>
           </div>
         </form>

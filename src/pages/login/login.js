@@ -5,6 +5,7 @@ import { showToastr } from "../../features/toastr/toastr-slice";
 import styles from "./login.module.css";
 import authenticationImage from "../../images/authentication-image.svg";
 import Navbar from '../../components/navbar/navbar';
+import { Link } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -60,11 +61,11 @@ export default function Login() {
           <button disabled={isSubmitButtonDisabled}>Login</button>
           <div className={styles.links}>
             <p>
-              Don't have an account? <a href="/register">Register here.</a>
+              Don't have an account? <Link to="/register">Register here.</Link>
             </p>
             <p>
               Forgot your password? No problemo,{" "}
-              <a href="/forgot-password">reset it here.</a>
+              <Link to="/forgot-password">reset it here.</Link>
             </p>
           </div>
         </form>

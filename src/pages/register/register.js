@@ -18,6 +18,7 @@ import { showToastr } from "../../features/toastr/toastr-slice";
 import styles from "./register.module.scss";
 import authenticationImage from "../../images/authentication-image.svg";
 import Navbar from "../../components/navbar/navbar";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   console.log("REGISTER PAGE RENDER");
@@ -238,11 +239,11 @@ export default function Register() {
           </button>
           <div className={styles.links}>
             <p>
-              Already have an account? <a href="/login">Login here.</a>
+              Already have an account? <Link to="/login">Login here.</Link>
             </p>
             <p>
               Forgot your password? No problemo,{" "}
-              <a href="/forgot-password">reset it here.</a>
+              <Link to="/forgot-password">reset it here.</Link>
             </p>
           </div>
         </form>
