@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { showToastr } from "../../features/toastr/toastr-slice";
 import styles from "./login.module.css";
-import authenticationImage from "../../images/authentication image.svg";
+import authenticationImage from "../../images/authentication-image.svg";
 import Navbar from '../../components/navbar/navbar';
 export default function Login() {
   const [email, setEmail] = useState("");

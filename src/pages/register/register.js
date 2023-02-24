@@ -16,7 +16,7 @@ import {
 } from "../../utils/validation";
 import { showToastr } from "../../features/toastr/toastr-slice";
 import styles from "./register.module.scss";
-import authenticationImage from "../../images/authentication image.svg";
+import authenticationImage from "../../images/authentication-image.svg";
 import Navbar from "../../components/navbar/navbar";
 
 export default function Register() {

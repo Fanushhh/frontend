@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 import styles from "./forgot-password.module.css";
-import authenticationImage from "../../images/authentication image.svg";
+import authenticationImage from "../../images/authentication-image.svg";
 import Navbar from "../../components/navbar/navbar";
 
 export default function ForgotPassword() {

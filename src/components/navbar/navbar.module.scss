@@ -52,7 +52,6 @@ h1{
 .nav__list {
     list-style: none;
     display: flex;
-    
     gap:40px;
     align-items: center; 
     @include for-mobile-down {
