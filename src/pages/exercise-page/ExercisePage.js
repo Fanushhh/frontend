@@ -11,7 +11,7 @@ export default function ExercisePage(){
 
     useEffect(() => {
         const fetchData = async () => {
-          const response = await fetch(`/api/exercises/${exerciseId}`);
+          const response = await fetch(`https://code-learn-v1.herokuapp.com/api/exercises/${exerciseId}`);
           const data = await response.json();
           setExercise(data);
           setIsLoading(false);

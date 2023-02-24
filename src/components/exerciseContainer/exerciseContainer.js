@@ -8,7 +8,7 @@ export default function ExerciseContainer() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/api/exercises/group-by-difficulty");
+      const response = await fetch("https://code-learn-v1.herokuapp.com/api/exercises/group-by-difficulty");
       const data = await response.json();
       setExercises(data);
     };

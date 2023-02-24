@@ -37,7 +37,7 @@ export default function ExerciseActions(){
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/exercises', formData);
+            const response = await axios.post('https://code-learn-v1.herokuapp.com/api/exercises', formData);
             console.log(response.data);
             console.log('here');
             setOpen(!open);
