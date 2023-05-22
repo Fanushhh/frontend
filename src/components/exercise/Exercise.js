@@ -11,14 +11,13 @@ import axios from 'axios';
 export default function Exercise({exerciseData}){
     
   const deleteItem = async (exerciseData._id) => {
-    try {
-      await axios.delete(`/api/exercises/${itemId}`);
-      console.log('Item deleted successfully!');
-      // Perform any necessary state updates or UI changes
-    } catch (error) {
-      console.error(error);
-      // Handle the error, show a notification, etc.
-    }
+    await fetch(`/api/exercises/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
   };
     
     return(
