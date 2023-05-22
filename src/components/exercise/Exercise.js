@@ -10,7 +10,7 @@ import axios from 'axios';
 
 export default function Exercise({exerciseData}){
     
-  const deleteItem = async (exerciseData._id) => {
+  const deleteItem = async (exerciseData.id) => {
     await fetch(`/api/exercises/${id}`, {
     method: "DELETE",
     headers: {
