@@ -16,7 +16,6 @@ export default function Exercise({exerciseData}){
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
   });
   };
     
