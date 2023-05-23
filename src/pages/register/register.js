@@ -57,26 +57,19 @@ export default function Register() {
 
   const handleChangeFirstName = (event) => {
     const firstNameInput = event.target.value;
+    setFirstName(firstNameInput);
     if (firstNameInput.length < 3) {
       setFirstNameErrorText(FIRST_NAME_ERRORS.MIN_LENGTH);
-      setFirstName(firstNameInput);
-      console.log("1");
+ 
     } else if (firstNameInput.length > 30) {
       setFirstNameErrorText(FIRST_NAME_ERRORS.MAX_LENGTH);
-      setFirstName(firstNameInput);
-      console.log("2");
+
     } else if (hasSpaces(firstNameInput)) {
       setFirstNameErrorText(FIRST_NAME_ERRORS.ONLY_SPACES);
-      setFirstName(firstNameInput);
-      console.log("3");
     } else if (!allLetter(firstNameInput)) {
       setFirstNameErrorText(FIRST_NAME_ERRORS.ONLY_LETTERS);
-      setFirstName(firstNameInput);
-      console.log("4");
     } else {
       setFirstNameErrorText("");
-      setFirstName(firstNameInput);
-      console.log("5");
     }
   };
 

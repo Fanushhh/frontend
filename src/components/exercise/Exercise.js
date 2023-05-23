@@ -5,7 +5,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import {Link} from 'react-router-dom';
 
 export default function Exercise({exerciseData}){
-
+    
     return(
         <div className={styles.exercise}>
             <Link  to={`/${exerciseData._id}`}>

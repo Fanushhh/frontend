@@ -17,31 +17,26 @@ import axios from 'axios';
 
 export default function ExerciseActions(){
     const [open, setOpen] = useState(false);
-    const [formData, setFormData] = useState({
-        id: '',
-        name: '',
-        difficulty: '',
-        description: ''
-    })
+    
     const handleClick = () => {
         setOpen(!open);
     }
 
-    const handleChange = (e) =>{
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         try {
-            const response = await axios.post('https://code-learn-v1.herokuapp.com/api/exercises', formData);
+            const data = {
+                id: e.target.exerciseId.value,
+                name:e.target.name.value,
+                difficulty: e.target.difficulty.value,
+                description: e.target.description.value
+            }
+            console.log(data)
+            const response = await axios.post('https://code-learn-v1.herokuapp.com/api/exercises', data);
             console.log(response.data);
-            console.log('here');
             setOpen(!open);
-            window.location.reload();
+            
         } catch(error){
             console.log(error);
         }
@@ -57,75 +52,71 @@ export default function ExerciseActions(){
             </div>
             
             <Dialog className={styles.modal} open={open} onClose={handleClick}>
-            <form className={styles.addExerciseForm} onSubmit={handleSubmit}>
-                <DialogTitle>Add a new exercise</DialogTitle>
-                <DialogContent>
-                <DialogContentText>
-                    Make sure to fill it with as many details as possible in order for others to better understand and solve your problem.
-                </DialogContentText>
-                <TextField
-                    autoFocus
-                    margin="normal"
-                    id="id"
-                    label="Exercise Id"
-                    type="number"
-                    name='id'
-                    fullWidth
-                    value={formData.id}
-                    onChange={handleChange}
-                    variant="standard"
-                    placeholder='Give it a nice id...'
-                />
-                <TextField
-                    autoFocus
-                    margin="normal"
-                    id="name"
-                    name='name'
-                    label="Exercise name"
-                    type="text"
-                    fullWidth
-                    value={formData.name}
-                    onChange={handleChange}
-                    variant="standard"
-                    placeholder='A beautiful name...'
-                />
-                <Box sx={{ minWidth: 120, marginTop: 3 }}>
-                    <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Difficulty</InputLabel>
-                        <Select
-                        labelId="demo-simple-select-label"
-                        id="difficulty"
-                        label="Difficulty"
-                        name='difficulty'
-                        value={formData.difficulty}
-                        onChange={handleChange}
-                        >
-                        <MenuItem value='Easy'>Easy</MenuItem>
-                        <MenuItem value='Medium'>Medium</MenuItem>
-                        <MenuItem value='Intermediate'>Intermediate</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Box>
-                <TextField
-                    autoFocus
-                    margin="normal"
-                    id="id"
-                    label="Exercise description"
-                    multiline
-                    name='description'
-                    value={formData.description}
-                    onChange={handleChange}
-                    rows={4}
-                    type="number"
-                    fullWidth
-                    variant="standard"
-                    placeholder='Try to be as specific as possible, maybe an example would help?'
-                />
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClick}>Cancel</Button>
-                    <Button type='submit'>Add</Button>
-                </DialogActions>
+                <form className={styles.addExerciseForm} onSubmit={handleSubmit}>
+                    <DialogTitle>Add a new exercise</DialogTitle>
+                    <DialogContent>
+                    <DialogContentText>
+                        Make sure to fill it with as many details as possible in order for others to better understand and solve your problem.
+                    </DialogContentText>
+                    <TextField
+                        autoFocus
+                        margin="normal"
+                        id="exerciseId"
+                        name='exerciseId'
+                        label="Exercise Id"
+                        type="number"
+                        fullWidth
+                        variant="standard"
+                        placeholder='Give it a nice id...'
+                        defaultValue=''
+                    />
+                    <TextField
+                        autoFocus
+                        margin="normal"
+                        id="name"
+                        name='name'
+                        label="Exercise name"
+                        type="text"
+                        fullWidth
+                        variant="standard"
+                        placeholder='A beautiful name...'
+                        defaultValue=''
+                    />
+                    <Box sx={{ minWidth: 120, marginTop: 3 }}>
+                        <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">Difficulty</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-label"
+                            id="difficulty"
+                            label="Difficulty"
+                            name='difficulty'
+                            defaultValue='Easy'
+                            >
+                            <MenuItem value='Easy'>Easy</MenuItem>
+                            <MenuItem value='Medium'>Medium</MenuItem>
+                            <MenuItem value='Intermediate'>Intermediate</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Box>
+                    <TextField
+                        autoFocus
+                        margin="normal"
+                        id="id"
+                        label="Exercise description"
+                        multiline
+                        name='description'
+                        rows={4}
+                        type="number"
+                        fullWidth
+                        variant="standard"
+                        placeholder='Try to be as specific as possible, maybe an example would help?'
+                        defaultValue=''
+                    />
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleClick}>Cancel</Button>
+                        <Button type='submit'>Add</Button>
+                    </DialogActions>
                 </form>
             </Dialog>
             
