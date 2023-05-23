@@ -13,7 +13,7 @@ export default function ExerciseContainer() {
       setExercises(data);
     };
     fetchData();
-  }, []);
+  }, [exercises]);
   
   return (
     <>
