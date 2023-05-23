@@ -9,6 +9,7 @@ import axios from 'axios';
 
 
 export default function Exercise({exerciseData}){
+    
     const deleteItem = async (exerciseData) => {
     await fetch(`https://code-learn-v1.herokuapp.com/api/exercises/${exerciseData._id}`, {
     method: "DELETE",
